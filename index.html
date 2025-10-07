@@ -145,6 +145,23 @@
             0% { transform: translateY(0); }
             100% { transform: translateY(-25px); }
         }
+        table {
+            width: 80%;
+            margin: 2em 0;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 1em;
+            text-align: center;
+            border: 1px solid #fff;
+        }
+        th {
+            background: rgba(255, 255, 255, 0.1);
+            color: #26d0ce;
+        }
+        tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -205,5 +222,43 @@
     <div class="star" style="top:60%;left:50%;animation-delay:0.8s;"></div>
     <h1>歡迎來到首頁</h1>
     <p>這是您的 index.html 範例檔案。</p>
+    <table>
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+        <th>Header 3</th>
+        <th>Header 4</th>
+      </tr>
+      <tr>
+        <td>Row1-Col1</td>
+        <td>Row1-Col2</td>
+        <td>Row1-Col3</td>
+        <td>Row1-Col4</td>
+      </tr>
+      <tr>
+        <td>Row2-Col1</td>
+        <td>Row2-Col2</td>
+        <td>Row2-Col3</td>
+        <td>Row2-Col4</td>
+      </tr>
+      <tr>
+        <td>Row3-Col1</td>
+        <td>Row3-Col2</td>
+        <td>Row3-Col3</td>
+        <td>Row3-Col4</td>
+      </tr>
+      <tr>
+        <td>Row4-Col1</td>
+        <td>Row4-Col2</td>
+        <td>Row4-Col3</td>
+        <td>Row4-Col4</td>
+      </tr>
+      <tr>
+        <td>Row5-Col1</td>
+        <td>Row5-Col2</td>
+        <td>Row5-Col3</td>
+        <td>Row5-Col4</td>
+      </tr>
+    </table>
 </body>
 </html>
