@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>期末個人網站 - 姓名</title>
+  <meta name="description" content="期末個人網站範例，包含導覽列、簡介、作品展示與頁尾。" />
+  <style>
+    :root{--accent:#2b8cff;--bg:#f7f9fc;--text:#102a43}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Arial,Helvetica,sans-serif;margin:0;color:var(--text);background:var(--bg);line-height:1.5}
+
+    /* Navbar */
+    .nav{background:#fff;box-shadow:0 2px 6px rgba(16,42,67,0.06);position:sticky;top:0;z-index:50}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--text);text-decoration:none}
+    .brand .logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:inline-block}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{color:var(--text);text-decoration:none;padding:8px;border-radius:6px}
+    .nav-links a:hover{background:rgba(43,140,255,0.08)}
+    .cta{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px}
+
+    /* hamburger */
+    .hamburger{display:none;border:0;background:none;padding:8px}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--text);margin:4px 0}
+
+    /* Hero / Intro */
+    .hero{padding:48px 0}
+    .hero-grid{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
+    .intro{background:#fff;padding:28px;border-radius:12px;box-shadow:0 6px 18px rgba(16,42,67,0.06)}
+    .intro h1{margin:0 0 8px;font-size:28px}
+    .intro p{margin:0 0 16px;color:#334e68}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:#eef6ff;color:var(--accent);padding:6px 10px;border-radius:999px;font-size:13px}
+    .profile-card{background:#fff;padding:18px;border-radius:12px;display:flex;flex-direction:column;align-items:center;gap:12px;box-shadow:0 6px 18px rgba(16,42,67,0.06)}
+    .profile-card img{width:100%;height:auto;border-radius:8px;object-fit:cover}
+    .profile-card .name{font-weight:700}
+
+    /* Projects */
+    .projects{padding:28px 0}
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(16,42,67,0.04)}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    .card h3{margin:10px 0 6px;font-size:16px}
+    .card p{margin:0;color:#486581;font-size:14px}
+
+    /* Footer */
+    footer{padding:28px 0;color:#6b7c93}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:12px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero-grid{grid-template-columns:1fr}
+      .projects-grid{grid-template-columns:repeat(2,1fr)}
+      .nav-links{display:none}
+      .hamburger{display:inline-flex}
+      .mobile-menu{display:none;background:#fff;padding:12px;border-top:1px solid #eef2f7}
+      .mobile-menu.open{display:block}
+    }
+    @media (max-width:520px){
+      .projects-grid{grid-template-columns:1fr}
+      .hero-grid{gap:16px}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="#">
+          <span class="logo" aria-hidden="true"></span>
+          <span>期末個人網站</span>
+        </a>
+        <nav>
+          <div class="nav-links" id="navLinks">
+            <a href="#intro">簡介</a>
+            <a href="#projects">作品</a>
+            <a href="#contact">聯絡</a>
+            <a class="cta" href="#projects">查看作品</a>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="展開選單">
+            <span></span><span></span><span></span>
+          </button>
+    
+  </header>
+
+  <main>
+    <section id="intro" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="intro">
+            <h1>你好，我是 你的姓名</h1>
+            <p>這裡放你的自我介紹：學系、專長、期末專題概要或個人設計理念。建議 2-3 句話簡潔介紹。</p>
+            <div class="skills">
+              <span class="chip">前端開發</span>
+              <span class="chip">UI / UX</span>
+              <span class="chip">攝影</span>
+              <span class="chip">作品集</span>
+            </div>
+          </div>
+
+          <aside class="profile-card" aria-label="個人名片">
+            <!-- 可替換成你的頭像 -->
+            <img src="1007/kristaps-ungurs-x8Oro9-tG64-unsplash (1).jpg" alt="個人照片範例">
+            <div class="name">你的姓名</div>
+            <div class="muted">學校 / 科系</div>
+            <a href="#contact" class="cta" style="text-decoration:none;margin-top:8px;">聯絡我</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2>作品集</h2>
+        <p style="color:#486581;margin-top:6px">下面可放期末專題或歷年作品截圖，點擊卡片可以連到詳細頁面或 Github。</p>
+
+        <div class="projects-grid" style="margin-top:18px">
+          <article class="card">
+            <img src="1014/1.jpg" alt="作品截圖 1">
+            <h3>專案名稱 A</h3>
+            <p>簡短描述：工具、角色或功能重點。</p>
+          </article>
+
+          <article class="card">
+            <img src="1007/olexandr-ignatov-WGgZqd9O9fE-unsplash.jpg" alt="作品截圖 2">
+            <h3>專案名稱 B</h3>
+            <p>簡短描述：例如前端框架、資料視覺化等。</p>
+          </article>
+
+          <article class="card">
+            <img src="1104/IMG_0040.JPG" alt="作品截圖 3">
+            <h3>專案名稱 C</h3>
+            <p>簡短描述或連結到作品頁面。</p>
+          </article>
+
+          <article class="card">
+            <img src="1014/2.jpg" alt="作品截圖 4">
+            <h3>專案名稱 D</h3>
+            <p>簡短描述：可放設計稿或網站截圖。</p>
+          </article>
+
+          <article class="card">
+            <img src="1007/siyuan-g_V2rt6iG7A-unsplash.jpg" alt="作品截圖 5">
+            <h3>專案名稱 E</h3>
+            <p>簡短描述或製作過程重點。</p>
+          </article>
+
+          <article class="card">
+            <img src="1104/IMG_0056.JPG" alt="作品截圖 6">
+            <h3>專案名稱 F</h3>
+            <p>簡短描述或技術重點。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="padding:28px 0">
+      <div class="container">
+        <div style="background:#fff;padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(16,42,67,0.04)">
+          <h2>聯絡方式</h2>
+          <p style="color:#486581">Email: <a href="mailto:your.email@example.com">your.email@example.com</a> &nbsp;｜&nbsp; GitHub: <a href="#">你的帳號</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>© 2025 你的姓名。保留所有權利。</div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <a href="#">Twitter</a>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 簡單的 mobile nav 切換
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', ()=>{
+      mobileMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
